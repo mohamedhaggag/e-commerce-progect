@@ -1,0 +1,169 @@
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: #f8f9fa;
+}
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background-color: black;
+    color: #fff;
+    transition: all 0.3s ease;
+    z-index: 1050;
+    border-radius: 16px;
+}
+.sidebar.collapsed {
+    left: -250px;
+}
+.sidebar h3 {
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.sidebar ul li{
+    text-align: center;
+    transition: .3s;
+}
+.sidebar ul li .active{
+    color: black;
+    background-color: white;
+
+}
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 20px;
+    transition: 0.3s;
+    text-align: center;
+    border-radius: 8px;
+    text-align: center;
+}
+.sidebar ul li a:hover {
+    background-color: #343a40;
+}
+.sidebar ul li a i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+/* Main Content */
+main nav{
+    border-radius: 12px;
+}
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+.main-content.expanded {
+    margin-left: 0;
+}
+/* Navbar */
+.navbar-custom {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1040;
+}
+/*graph */
+.chart-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    padding: 20px 30px;
+    max-width: 100%;
+    height: 60vh;
+    margin: auto;
+    overflow-x: auto;
+}
+.chart-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    font-size: 15px;
+    color: #6b7280;
+    margin-bottom: 12px;
+}
+.chart-header button {
+    background: none;
+    border: none;
+    color: #6b7280;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.chart-header button.active {
+    color: #111827;
+    font-weight: 700;
+}
+.divider {
+    height: 18px;
+    width: 1px;
+    background: #e5e7eb;
+}
+.legend {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+.dot {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.dot.this-year { background: #000; }
+.dot.last-year { background: #60a5fa; }
+.chart-wrapper {
+    min-width: 700px;
+}
+/* graph payments */
+.chart-container {
+    background: #fafafa;
+    border-radius: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 900px;
+    height: 50vh;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+canvas {
+    border-radius: 15px;
+}
+
+
+
+@media (max-width: 600px) {
+    body { padding: 20px; }
+    .chart-card { padding: 16px; }
+}
+
+/* media mobile */
+@media (max-width: 992px) {
+    .sidebar {
+        left: -250px;
+    }
+    .sidebar.show {
+        left: 0;
+    }
+    .main-content {
+        margin-left: 0;
+    }
+}
